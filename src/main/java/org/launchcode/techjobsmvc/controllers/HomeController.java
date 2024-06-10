@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.HashMap;
 
 /**
- * Created by LaunchCode
+ * Note - Index displays the home page for the app.
  */
 @Controller
 public class HomeController {

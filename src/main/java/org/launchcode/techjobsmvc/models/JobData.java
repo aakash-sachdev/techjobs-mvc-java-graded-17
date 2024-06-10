@@ -14,9 +14,10 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by LaunchCode
- */
+// Notes - JobData class manages loading, storing, and providing access to job-related data for the application.
+// The JobData class serves the same purpose as before—it reads data from the job_data.csv  file and stores it in a format we can use.
+
+
 public class JobData {
 
     private static final String DATA_FILE = "job_data.csv";

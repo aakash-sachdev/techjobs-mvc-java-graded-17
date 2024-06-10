@@ -11,9 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * Created by LaunchCode
- */
+//This controller provides functionality for users to see either a table showing all the options for the different Job fields (employer, location, coreCompetency, and positionType) or a list of details for a selected set of jobs.
+
 @Controller
 @RequestMapping(value = "list")
 public class ListController {
@@ -22,12 +21,15 @@ public class ListController {
     static HashMap<String, Object> tableChoices = new HashMap<>();
 
     public ListController () {
+        //All the headings(column) on /list
         columnChoices.put("all", "All");
         columnChoices.put("employer", "Employer");
         columnChoices.put("location", "Location");
         columnChoices.put("positionType", "Position Type");
         columnChoices.put("coreCompetency", "Skill");
 
+        //All the options on /list
+//        tableChoices.put("all", "View All");
         tableChoices.put("employer", JobData.getAllEmployers());
         tableChoices.put("location", JobData.getAllLocations());
         tableChoices.put("positionType", JobData.getAllPositionTypes());
@@ -47,7 +49,7 @@ public class ListController {
     }
 
     @GetMapping(value = "jobs")
-    public String listJobsByColumnAndValue(Model model, @RequestParam String column, @RequestParam(required = false) String value) {
+    public String listJobsByColumnAndValue(Model model, @RequestParam String column, @RequestParam (required = false) String value) { //possible to be null
         ArrayList<Job> jobs;
         if (column.equals("all")){
             jobs = JobData.findAll();
